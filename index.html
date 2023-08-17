@@ -9,29 +9,22 @@
 </head>
 <body>
 
-<header>
+<div class=wd>
     <h1>Weather Dashboard</h1>
-</header>
-<div class="container">
-    <div class="row">
-        <div class="col-md-2 ml-0">
-            <h2>Search for a City</h2>
-            <input type="text" class="form-control">
-            <button class="btn btn-primary mt-2">Search</button>
-            <hr>
-            <button class="btn btn-secondary">City button 1</button>
-            <button class="btn btn-secondary">City button 2</button>
-            <button class="btn btn-secondary">City button 3</button>
-            <button class="btn btn-secondary">City button 4</button>
-        </div>
-        <div class="col-md-8">
-            <!-- Additional content for the right side -->
-        </div>
-    </div>
 </div>
 
+<div class='citySearch'>
+    <h2>Search for a city:</h2>
+    <input id='searchField' placeholder='city name'>
+    <button id='searchbtn'>Search</button>
+</div>
+
+<div id='previousSearch'></div>
+<div class='cityResults'></div>
+<div class='5day'></div>
 
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="Assets/script.js"></script>
 </body>
 </html>
