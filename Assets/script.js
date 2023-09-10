@@ -1,3 +1,5 @@
+//Need to find long/lat for coordinates
+
 var apiKey = '8ba90b6b36072ccf5c4c41cbde0e83bb'
 let searchBtn = document.querySelector('#searchBtn').addEventListener('click', ()=>{
     getWeather()
