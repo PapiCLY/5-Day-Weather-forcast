@@ -22,6 +22,7 @@ getWeather = ()=>{
         document.querySelector('#currentDayTemp').textContent = Math.round(data.main.temp) + '°F'
         document.querySelector('#currentDayHumidity').textContent = data.main.humidity + '%'
         document.querySelector('#currentDayWindSpeed').textContent = Math.round(data.wind.speed) + 'mp/h'
+        document.querySelector('.currentWeather').setAttribute('style', 'display:block;')
     })
     .catch(err=>{
         console.log(`error${err}`)
