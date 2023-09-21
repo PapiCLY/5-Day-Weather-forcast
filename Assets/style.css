@@ -1,3 +1,14 @@
+header{
+    background-image: linear-gradient(to right, blue, darkblue);
+    width: auto;
+    text-align: center;
+    align-items: center;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    margin: 10px;
+}
+
 .currentWeather{
     font-family: arial;
     background-color: lightgray;
