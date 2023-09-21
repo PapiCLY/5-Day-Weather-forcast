@@ -12,7 +12,8 @@ let searchBtn = document.querySelector('#searchBtn').addEventListener('click', (
 getWeather = ()=>{
 
     let searchField = document.querySelector('#searchField').value
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${searchField}&cnt=1&appid=${apiKey}&units=imperial`
+    // let url = `https://api.openweathermap.org/data/2.5/weather?q=${searchField}&cnt=1&appid=${apiKey}&units=imperial`
+    let url= `https://api.openweathermap.org/data/2.5/weather?q=${searchField}&cnt=1&appid=${apiKey}&units=imperial`
 
     fetch(url)
     .then(res=> res.json())
