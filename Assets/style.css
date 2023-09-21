@@ -17,3 +17,10 @@ label{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 33px;
 }
+
+#previousSearchList{
+    list-style-type: none;
+    color: rgb(11, 97, 29);
+    font-weight: bold;
+    display: inline-block;
+}
