@@ -10,6 +10,12 @@ header{
     border-radius: 5px;
 }
 
+aside{
+    border: 1px solid black;
+    float: left;
+    margin: 10px;
+}
+
 .currentWeather{
     font-family: arial;
     background-color: lightgray;
