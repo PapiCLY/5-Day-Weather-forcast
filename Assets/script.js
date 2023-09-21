@@ -17,7 +17,9 @@ getWeather = ()=>{
     fetch(url)
     .then(res=> res.json())
     .then(data=>{
-        let icon =  document.querySelector()data.weather[0].icon
+        // document.querySelector('img').src = data.weather[0].icon
+        // document.querySelector('#currentDayTemp').textContent = data.main.temp
+        console.log(data.weather[0])
     })
     .catch(err=>{
         console.log(`error${err}`)
