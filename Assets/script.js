@@ -5,6 +5,7 @@
 // >>>>>>> b781220b289080b88942c52b7e2ca7e7efe4cf39
 
 let apiKey = 'ce6c5ccfc970f8d24550539f01a4e90d'
+let previousSearches = JSON.parse(localStorage.getItem('#previousSearches')) || []
 let searchBtn = document.querySelector('#searchBtn').addEventListener('click', ()=>{
     getWeather()
 })
@@ -24,7 +25,8 @@ getWeather = ()=>{
         document.querySelector('#currentDayHumidity').textContent = data.main.humidity + '%'
         document.querySelector('#currentDayWindSpeed').textContent = data.wind.speed + ' MPH'
         document.querySelector('.currentWeather').setAttribute('style', 'display:block;')
-        // console.log(data.name)
+        previousSearches.push(searchField);
+        localStorage.setItem('previousSearches', JSON.stringify(previousSearches))
     })
     .catch(err=>{
         console.log(`error${err}`)
