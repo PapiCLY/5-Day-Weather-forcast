@@ -18,11 +18,13 @@ getWeather = ()=>{
     fetch(url)
     .then(res=> res.json())
     .then(data=>{
+        document.querySelector('#currentLocation').textContent = data.name
         document.querySelector('img').src = data.weather[0].icon
         document.querySelector('#currentDayTemp').textContent = Math.round(data.main.temp) + '°F'
         document.querySelector('#currentDayHumidity').textContent = data.main.humidity + '%'
-        document.querySelector('#currentDayWindSpeed').textContent = Math.round(data.wind.speed) + 'mp/h'
+        document.querySelector('#currentDayWindSpeed').textContent = data.wind.speed + ' MPH'
         document.querySelector('.currentWeather').setAttribute('style', 'display:block;')
+        // console.log(data.name)
     })
     .catch(err=>{
         console.log(`error${err}`)
