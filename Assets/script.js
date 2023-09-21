@@ -10,6 +10,19 @@ let searchBtn = document.querySelector('#searchBtn').addEventListener('click', (
     getWeather()
 })
 
+updatePreviousSearchList = ()=>{
+    const previousSearchList = document.querySelector('#previousSearchList');
+    previousSearchList.innerHTML = '';
+
+    previousSearchList.forEach(search =>{
+        const listItem = document.createElement('li');
+        listItem.textContent = search;
+        previousSearchList.appendChild(listItem)
+    })
+}
+
+
+
 getWeather = ()=>{
 
     let searchField = document.querySelector('#searchField').value
@@ -27,8 +40,11 @@ getWeather = ()=>{
         document.querySelector('.currentWeather').setAttribute('style', 'display:block;')
         previousSearches.push(searchField);
         localStorage.setItem('previousSearches', JSON.stringify(previousSearches))
+        updatePreviousSearchList();
     })
     .catch(err=>{
         console.log(`error${err}`)
     })
 }
+
+
