@@ -85,7 +85,6 @@ label{
     'menu main main main right right'
     'menu footer footer footer footer footer';
   gap: 10px;
-  background-color: #2196F3;
   padding: 10px;
   display: flex;
   flex-wrap: wrap;
@@ -95,6 +94,7 @@ label{
 
 #topBox{
     width: 100%;
+    border: 1px solid black;
 }
 .grid-container > div {
   background-color: rgba(255, 255, 255, 0.8);
@@ -105,4 +105,5 @@ label{
 .grid-item{
     width: 300px;
     height: 300px;
+    border: 1px solid blue;;
 }
