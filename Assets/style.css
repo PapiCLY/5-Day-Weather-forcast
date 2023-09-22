@@ -1,3 +1,6 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
 header{
     background-image: linear-gradient(to right, blue, darkblue);
     width: auto;
@@ -41,10 +44,6 @@ aside{
     background-color:  rgb(12, 68, 84);;
 }
 
-#weatherToday{
-    display: inline-block;
-    width: 70%;
-}
 .currentWeather{
     font-family: arial;
     background-color: lightgray;
@@ -60,10 +59,6 @@ label{
     font-weight: bold;
 }
 
-#currentLocation{
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 33px;
-}
 
 #previousSearchList{
     list-style-type: none;
@@ -95,6 +90,8 @@ label{
 #topBox{
     width: 100%;
     border: 1px solid black;
+    text-align: left;
+    height: 100%;
 }
 .grid-container > div {
   background-color: rgba(255, 255, 255, 0.8);
@@ -104,6 +101,6 @@ label{
 }
 .grid-item{
     width: 300px;
-    height: 300px;
+    height: 250px;
     border: 1px solid blue;;
 }
