@@ -32,7 +32,13 @@ getWeather = ()=>{
     fetch(url)
     .then(res=> res.json())
     .then(data=>{
-        document.querySelector('#currentLocation').textContent = data.name
+        const currentDate = new Date().toLocaleDateString('en-US', {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+        document.querySelector('#currentLocation').textContent = `${data.name} - ${currentDate}`;
         document.querySelector('img').src = data.weather[0].icon
         document.querySelector('#currentDayTemp').textContent = `Current Temp: ${Math.round(data.main.temp)}°F`
         document.querySelector('#currentDayHumidity').textContent = `Humidity: ${data.main.humidity} %`
