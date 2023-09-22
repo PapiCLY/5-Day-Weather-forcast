@@ -98,8 +98,16 @@ label{
 .grid-container > div {
   background-color: rgba(255, 255, 255, 0.8);
   text-align: center;
-  padding: 20px 0;
+  padding: 5px;
   font-size: 30px;
+}
+
+p{
+    font-size: medium;
+}
+
+#currentLocation{
+    font-weight: bold;
 }
 .grid-item{
     width: 300px;
