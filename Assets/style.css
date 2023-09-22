@@ -89,7 +89,7 @@ label{
 
 #topBox{
     width: 100%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     text-align: left;
     height: 100%;
     display: flex;
@@ -97,10 +97,11 @@ label{
     border-radius: 8px;
 }
 .grid-container > div {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: blue;
   text-align: center;
   padding: 5px;
   font-size: 30px;
+  color: white;
 }
 
 p{
@@ -120,7 +121,7 @@ p{
 }
 
 .grid-item:hover{
-    background-color: blue;
-    color: white;
-    transform: scale(1.05);
+    background-color: white;
+    color: black;
+    transform: scale(1);
 }
