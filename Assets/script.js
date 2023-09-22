@@ -34,9 +34,9 @@ getWeather = ()=>{
     .then(data=>{
         document.querySelector('#currentLocation').textContent = data.name
         document.querySelector('img').src = data.weather[0].icon
-        document.querySelector('#currentDayTemp').textContent = Math.round(data.main.temp) + '°F'
-        document.querySelector('#currentDayHumidity').textContent = data.main.humidity + '%'
-        document.querySelector('#currentDayWindSpeed').textContent = data.wind.speed + ' MPH'
+        document.querySelector('#currentDayTemp').textContent = 'Current Temp: ' + Math.round(data.main.temp) + '°F'
+        document.querySelector('#currentDayHumidity').textContent = 'Humidity: ' + data.main.humidity + '%'
+        document.querySelector('#currentDayWindSpeed').textContent = 'Wind Speed: ' + data.wind.speed + ' MPH'
         document.querySelector('.currentWeather').setAttribute('style', 'display:block;')
         previousSearches.push(searchField);
         localStorage.setItem('previousSearches', JSON.stringify(previousSearches))
