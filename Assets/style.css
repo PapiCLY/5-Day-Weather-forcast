@@ -114,11 +114,13 @@ p{
     font-size: larger;
 }
 .grid-item{
+    display: flex;
     width: 300px;
     height: 250px;
     border: 1px solid blue;
     border-radius: 8px;
     transition: ease 0.3s, background-color 0.3s, color 0.3s, transform 0.3s;
+    flex-direction: column;
 }
 
 .grid-item:hover{
