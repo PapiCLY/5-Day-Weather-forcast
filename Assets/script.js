@@ -39,7 +39,7 @@ getWeather = ()=>{
             day: 'numeric'
         });
         document.querySelector('#currentLocation').textContent = `${data.name} - ${currentDate}`;
-        document.querySelector('img').src = data.weather[0].icon
+        document.querySelector('img').src = data.weather[0].icon + '.png'
         document.querySelector('#currentDayTemp').textContent = `Current Temp: ${Math.round(data.main.temp)}°F`
         document.querySelector('#currentDayHumidity').textContent = `Humidity: ${data.main.humidity} %`
         document.querySelector('#currentDayWindSpeed').textContent = `Wind Speed: ${data.wind.speed} MPH`
