@@ -71,7 +71,7 @@ label{
     'header header header header header header'
     'menu main main main right right'
     'menu footer footer footer footer footer';
-  gap: 10px;
+  gap: 7px;
   padding: 10px;
   display: flex;
   flex-wrap: wrap;
