@@ -7,7 +7,8 @@
 let apiKey = 'ce6c5ccfc970f8d24550539f01a4e90d'
 let previousSearches = JSON.parse(localStorage.getItem('previousSearches')) || []
 let searchBtn = document.querySelector('#searchBtn').addEventListener('click', ()=>{
-    getWeather()
+    getWeather();
+    get5Day();
 })
 
 updatePreviousSearchList = ()=>{
@@ -45,6 +46,27 @@ getWeather = ()=>{
         previousSearches.push(searchField);
         localStorage.setItem('previousSearches', JSON.stringify(previousSearches))
         updatePreviousSearchList();
+    })
+    .catch(err=>{
+        console.log(`error${err}`)
+    })
+}
+
+get5Day = ()=>{
+
+    let searchField = document.querySelector('#searchField').value
+    let url= `https://api.openweathermap.org/data/2.5/forecast?q=${searchField}&cnt=1&appid=${apiKey}&units=imperial`
+
+    fetch(url)
+    .then(res=> res.json())
+    .then(data=>{
+        const currentDate = new Date().toLocaleDateString('en-US', {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+        
         console.log(data)
     })
     .catch(err=>{
