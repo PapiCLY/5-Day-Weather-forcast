@@ -120,3 +120,32 @@ p{
     color: white;
     transform: scale(1);
 }
+
+
+@media screen and (max-width: 600px){
+    aside{
+        /* border: 1px solid black; */
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        /* padding: 20px; */
+    }#topBox{
+        width: 100%;
+        /* border: 1px solid black; */
+        text-align: center;
+        border-radius: 8px;
+        font-size: medium;
+    }
+}
+
+@media screen and (max-width: 1200px){
+    #topBox{
+        width: 100%;
+        /* border: 1px solid black; */
+        text-align: left;
+        font-size: medium;
+    }#currentLocation{
+        font-weight: bold;
+        font-size: large;
+    }
+}
