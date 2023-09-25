@@ -7,7 +7,7 @@
 let apiKey = 'ce6c5ccfc970f8d24550539f01a4e90d'
 let previousSearches = JSON.parse(localStorage.getItem('previousSearches')) || []
 let searchBtn = document.querySelector('#searchBtn').addEventListener('click', ()=>{
-    getWeather();
+    todaysWeather();
     get5Day();
 })
 
@@ -24,9 +24,10 @@ updatePreviousSearchList = ()=>{
 
 
 
-getWeather = ()=>{
+todaysWeather = ()=>{
 
     let searchField = document.querySelector('#searchField').value
+    if(!searchField) return;
     let url= `https://api.openweathermap.org/data/2.5/weather?q=${searchField}&cnt=1&appid=${apiKey}&units=imperial`
 
     fetch(url)
@@ -39,7 +40,7 @@ getWeather = ()=>{
             day: 'numeric'
         });
         document.querySelector('#currentLocation').textContent = `${data.name} - ${currentDate}`;
-        document.querySelector('img').src = data.weather[0].icon + 'icon' + '.png'
+        document.querySelector('img').src = data.weather[0].icon + '.png'
         document.querySelector('#currentDayTemp').textContent = `Current Temp: ${Math.round(data.main.temp)}°F`
         document.querySelector('#currentDayHumidity').textContent = `Humidity: ${data.main.humidity} %`
         document.querySelector('#currentDayWindSpeed').textContent = `Wind Speed: ${data.wind.speed} MPH`
@@ -52,21 +53,12 @@ getWeather = ()=>{
     })
 }
 
-get5Day = ()=>{
+get5Day = (coordinates)=>{
 
-    let searchField = document.querySelector('#searchField').value
-    let url= `https://api.openweathermap.org/data/2.5/forecast?q=${searchField}&cnt=1&appid=${apiKey}&units=imperial`
-
-    fetch(url)
+    let {lat, lon} = coordinates
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}`)
     .then(res=> res.json())
     .then(data=>{
-        const currentDate = new Date().toLocaleDateString('en-US', {
-            weekday: 'long',
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-        });
-        
         console.log(data)
     })
     .catch(err=>{
