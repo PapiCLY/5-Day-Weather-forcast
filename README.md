@@ -1,6 +1,6 @@
 ## Weather Dashboard 5-day
 
-Using 3rd party APIs I attempted to create a weather dashboard of the current day weather and the next 5 days.
+Using 3rd party APIs I attempted to create a weather dashboard of the current day weather and the next 5 days --
 
 ## User Story
 AS A traveler
